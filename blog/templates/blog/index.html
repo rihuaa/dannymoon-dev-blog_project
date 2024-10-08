@@ -1,0 +1,23 @@
+{% extends 'blog/base.html' %}
+{% load staticfiles %}
+
+{% block body %}
+		<div class="wrapper">
+			<div class="postcontainer">
+				{% for post in posts %}
+				<div class="posts">
+					<div class="post-inner">
+						{% if post.picture %}
+						<a href="{% url 'topics' post.pk %}" id="post-picture"><img src="{{ post.picture.url }}" class="img-responsive"></a>
+						{% endif %}
+						<p><a href="{% url 'topics' post.pk %}" id="post-title">{{ post.title }}</a></p>
+						<p id="post-published">{{ post.created_date }}</p>
+						<p id="post-text">{{ post.text|truncatewords:50 }}</p>
+						<a href="{% url 'topics' post.pk %}" class="btn btn-outline-primary" role="button">Read More</a>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+
+{% endblock %}

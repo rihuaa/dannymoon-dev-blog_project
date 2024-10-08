@@ -1,0 +1,22 @@
+{% extends 'blog/base.html' %}
+
+{% block quote %}
+<p class="description" style="font-size: 60px; color: #A9A9A9">Work Hard Anywhere</p>
+{% endblock %}
+
+{% block body %}
+<div class="wrapper">
+	<div class="postcontainer">
+		<div class="posts">
+			<div class="post-inner">
+				{% if posts.picture %}
+				<p id="post-picture"><img src="{{ posts.picture.url }}" class="img-responsive"></p>
+				{% endif %}
+				<p id="post-title">{{ posts.title }}</p>
+				<p id="post-published">{{ posts.created_date }}</p>
+				<p id="post-text">{{ posts.text|linebreaksbr }}</p>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

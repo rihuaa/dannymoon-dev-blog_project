@@ -1,0 +1,69 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>d.Moon-Production</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet"><link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/stylesheet.css' %}">
+
+</head>
+<body>
+	<div id="container">
+		<div class="sidebar navbar navbar-toggleable-md">
+			<div class="topleft">
+				<a href="{% url 'index' %}" id="logo">< / ></a>
+			</div>
+
+			<!-- End of Top Left -->
+			<div id="nav">
+				<ul class="navbar-nav">
+					<li class="blog"><a href="{% url 'index' %}">blog</a></li>
+					<li class="about"><a href="{% url 'about' %}">about</a></li>
+					<li class="contact"><a href="/">contact</a></li>
+					<a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+				</ul>
+			</div>
+			<!-- End of Nav -->
+			<div class="bottomleft">
+				<a id="about" href="{% url 'about' %}" class="btn btn-outline-primary" role="button">About Me</a>
+				<img src="/media/me.jpg" class="me-image">
+				<p id="about-text">I'm 23 years old and currently pursuing to become a Backend developer
+			</div>
+		</div>
+
+		<div class="topheader">
+			<div id="innertopheader">
+				<div id="descriptioncontainer">
+					<div id="descriptionbackground">
+						{% block quote %}
+						<p class="description">A Bored Man is A Dangerous Man</p>
+						{% endblock %}
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		{% block body %}
+		{% endblock %}
+
+	<script>
+		function myFunction() {
+			var top_nav = document.getElementById("nav");
+			if (x.className == "nav") {
+				x.className += "responsive";
+			} else {
+				x.className = "nav";
+			}
+		}
+	</script>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+ </body>
+</html>
